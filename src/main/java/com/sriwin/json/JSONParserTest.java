@@ -53,11 +53,11 @@ public class JSONParserTest {
                                                        String dataFileContent) {
     List<Map<String, String>> list = new ArrayList<Map<String, String>>();
     try {
-      Map<String, String> dataMap = new HashMap<String, String>();
       String[] dataLineTokens = dataFileContent.split("\\n");
       for (int i = 0; i < dataLineTokens.length; i++) {
         if (i > 0) {
           String[] tokens = dataLineTokens[i].split(",");
+          Map<String, String> dataMap = new HashMap<String, String>();
           for (int j = 1; j <= tokens.length; j++) {
             String colName = colNamesMap.get(j);
             dataMap.put(colName, tokens[j-1].trim());
